@@ -7,4 +7,4 @@ def client():
 
 def test_hello(client):
     response = client.get('/')
-    assert response.data == b'Hello, Flask!'
+    assert response.data == b'Hello, Flask!!!'
