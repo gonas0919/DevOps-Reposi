@@ -7,4 +7,5 @@ def client():
 
 def test_hello(client):
     response = client.get('/')
-    assert response.data == b'Hello, Flask!!!'
+    assert b"<!DOCTYPE html>" in response.data
+    assert b"script.js" in response.data
