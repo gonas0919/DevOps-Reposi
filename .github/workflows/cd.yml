@@ -117,7 +117,15 @@ jobs:
         env: { COSIGN_EXPERIMENTAL: "1" }
         run: |
           set -euo pipefail
-          cosign sign --yes
+          cosign sign --yes "$IMG"
+          cosign attest --yes --predicate sbom.spdx.json --type spdx "$IMG"
+
+      - name: Upload SBOM artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom-spdx
+          path: sbom.spdx.json
+          retention-days: 30
 
 ###############################################################################
 # 2) Deploy to GCE VM
@@ -135,7 +143,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Install cosign
         uses: sigstore/cosign-installer@v3.9.2
 
