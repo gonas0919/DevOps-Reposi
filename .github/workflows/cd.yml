@@ -182,7 +182,7 @@ jobs:
             cat > "${{ env.REMOTE_DIR }}/.env" <<EOT
             DOMAIN=${{ env.DOMAIN }}
             LETSENCRYPT_EMAIL=${{ env.LETSENCRYPT_EMAIL }}
-            IMAGE_REF=${ env.IMG }
+            IMAGE_REF=${{ env.IMG }}
             DOCKERHUB_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
             EOT
           EOF
