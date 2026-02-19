@@ -3,37 +3,447 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>New MJSEC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;350;500;700;800&family=Manrope:wght@400;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="../static/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
 
 </head>
 <body>
-    <div id="loop">
-                <h1><b>훌랄라</b>아싸라비아 <b><i>콜롬비아</i></b> <span>빰빰빠</span> 쌈바아~ <span><i>얼쑤 좋다</i></span></h1>
-                <h1><b>훌랄라</b>아싸라비아 <b><i>콜롬비아</i></b> <span>빰빰빠</span> 쌈바아~ <span><i>얼쑤 좋다</i></span></h1>
-                <h1><b>훌랄라</b>아싸라비아 <b><i>콜롬비아</i></b> <span>빰빰빠</span> 쌈바아~ <span><i>얼쑤 좋다</i></span></h1>
-            </div>
+    <nav class="dot-nav" aria-label="Section navigation">
+        <a class="dot-nav__item is-active" href="#page" aria-label="Go to sequence"></a>
+        <a class="dot-nav__item" href="#space-approach" aria-label="Go to cards"></a>
+        <a class="dot-nav__item" href="#sequence-spacer" aria-label="Go to timeline"></a>
+        <a class="dot-nav__item" href="#gallery-start" aria-label="Go to gallery"></a>
+        <a class="dot-nav__item" href="#post-sequence-space" aria-label="Go to spacer"></a>
+        <a class="dot-nav__item" href="#page-end" aria-label="Go to bottom"></a>
+    </nav>
+    <button class="hamburger-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="fullscreen-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <div class="hamburger-overlay" id="fullscreen-menu" aria-hidden="true">
+        <nav class="hamburger-menu" aria-label="Quick menu">
+            <a class="hamburger-menu__item" href="#">Apply</a>
+            <a class="hamburger-menu__item" href="#">LMS</a>
+            <a class="hamburger-menu__item" href="#">WIKI</a>
+        </nav>
+    </div>
     <div id="main">
         <div id="page">
             <canvas></canvas>
+            <div class="sequence-intro-title" aria-hidden="true">MJSEC</div>
         </div>
+            <section id="space-approach" class="space-approach" aria-label="Immersive cards section">
+                <div class="space-viewport" id="space-viewport">
+                    <div class="space-world" id="space-world"></div>
+                    <div class="space-depth-mask"></div>
+                    <div class="space-noise"></div>
+                </div>
+                <div class="space-scroll-proxy" aria-hidden="true"></div>
+            </section>
+            <div id="sequence-spacer" class="sequence-spacer">
+                <div class="sequence-effects">
+                    <section class="process-timeline" aria-labelledby="process-title">
+                        <div class="section-header">
+                            <h2 id="process-title" class="heading-2">
+                                <span class="heading-highlight">MEMBER LEVEL</span>
+                                <span class="heading-accent-word">Who You Are?</span>
+                            </h2>
+                        </div>
+                        <div class="timeline-wrapper">
+                            <svg class="timeline-svg-connector" aria-hidden="true">
+                                <path id="timeline-trace" fill="none"></path>
+                                <path id="timeline-trace-glow" fill="none" stroke-linecap="round"></path>
+                            </svg>
+                            <div class="timeline-steps" role="tablist" aria-label="CL level progression">
+                                <button class="timeline-step" role="tab" id="tab-step1" aria-controls="panel-step1" aria-selected="true">
+                                    <div class="module-icon-wrapper">
+                                        <div class="module-plate">
+                                            <img class="module-glyph" src="/static/icons/cl1.svg" alt="CL1 starter icon" />
+                                        </div>
+                                    </div>
+                                    <div class="step-meta">
+                                        <span class="step-index">Level 1 //</span>
+                                        <div class="step-label">
+                                            <span class="label-bracket bracket-left">[</span>
+                                            <span class="label-text">CL 1</span>
+                                            <span class="label-bracket bracket-right">]</span>
+                                        </div>
+                                    </div>
+                                </button>
+                                <button class="timeline-step" role="tab" id="tab-step2" aria-controls="panel-step2" aria-selected="false">
+                                    <div class="module-icon-wrapper">
+                                        <div class="module-plate">
+                                            <img class="module-glyph" src="/static/icons/cl2.svg" alt="CL2 growth icon" />
+                                        </div>
+                                    </div>
+                                    <div class="step-meta">
+                                        <span class="step-index">Level 2 //</span>
+                                        <div class="step-label">
+                                            <span class="label-bracket bracket-left">[</span>
+                                            <span class="label-text">CL 2</span>
+                                            <span class="label-bracket bracket-right">]</span>
+                                        </div>
+                                    </div>
+                                </button>
+                                <button class="timeline-step" role="tab" id="tab-step3" aria-controls="panel-step3" aria-selected="false">
+                                    <div class="module-icon-wrapper">
+                                        <div class="module-plate">
+                                            <img class="module-glyph" src="/static/icons/cl3.svg" alt="CL3 advanced icon" />
+                                        </div>
+                                    </div>
+                                    <div class="step-meta">
+                                        <span class="step-index">Level 3 //</span>
+                                        <div class="step-label">
+                                            <span class="label-bracket bracket-left">[</span>
+                                            <span class="label-text">CL 3</span>
+                                            <span class="label-bracket bracket-right">]</span>
+                                        </div>
+                                    </div>
+                                </button>
+                                <button class="timeline-step" role="tab" id="tab-step4" aria-controls="panel-step4" aria-selected="false">
+                                    <div class="module-icon-wrapper">
+                                        <div class="module-plate">
+                                            <img class="module-glyph" src="/static/icons/cl4.svg" alt="CL4 expert icon" />
+                                        </div>
+                                    </div>
+                                    <div class="step-meta">
+                                        <span class="step-index">Level 4 //</span>
+                                        <div class="step-label">
+                                            <span class="label-bracket bracket-left">[</span>
+                                            <span class="label-text">CL 4</span>
+                                            <span class="label-bracket bracket-right">]</span>
+                                        </div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="timeline-content-wrapper">
+                            <div class="timeline-panel active" role="tabpanel" id="panel-step1" aria-labelledby="tab-step1">
+                                <h3 class="panel-title">CL1 - New Comer</h3>
+                                <p class="panel-body">
+                                    해킹 및 보안 전반의 기초 역량 함양 및 세부 전공 분야 탐색 단계
+                                </p>
+                            </div>
+                            <div class="timeline-panel" role="tabpanel" id="panel-step2" aria-labelledby="tab-step2" hidden>
+                                <h3 class="panel-title">CL2 - Core</h3>
+                                <p class="panel-body">
+                                    설정된 전문 분야의 심화 프로젝트 수행 및 기술 세미나를 통한 실무 역량 강화
+                                </p>
+                            </div>
+                            <div class="timeline-panel" role="tabpanel" id="panel-step3" aria-labelledby="tab-step3" hidden>
+                                <h3 class="panel-title">CL3 - Mentor</h3>
+                                <p class="panel-body">
+                                    탁월한 기술력을 바탕으로 교육 커리큘럼을 설계하고 후배 기수에게 지식을 전수하는 단계
+                                </p>
+                            </div>
+                            <div class="timeline-panel" role="tabpanel" id="panel-step4" aria-labelledby="tab-step4" hidden>
+                                <h3 class="panel-title">CL4 - Executive</h3>
+                                <p class="panel-body">
+                                    동아리 운영 전략 수립, 조직 관리 및 거버넌스 구축을 통한 지속 가능한 성장을 도모하는 단계
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
 
-            <div id="page1"></div>
-            <div id="page2"></div>
-            <div id="page3"></div>
+            <div id="gallery-start" class="content-wrap">
+                <header>
+                    <h1 class="fluid">타임라인 뭐로하지</h1>
+                </header>
+                <main>
+                    <section>
+                        <div class="content">
+                            <div class="grid">
+                                <div class="layer">
+                                    <div><img src="/static/images/image-12.jpeg" alt="" /></div>
+                                    <div><img src="/static/images/image-2.jpg" alt="" /></div>
+                                    <div><img src="/static/images/image-3.jpg" alt="" /></div>
+                                    <div><img src="/static/images/image-4.jpeg" alt="" /></div>
+                                    <div><img src="/static/images/image-5.jpeg" alt="" /></div>
+                                    <div><img src="/static/images/image-6.jpg" alt="" /></div>
+                                </div>
+                                <div class="layer">
+                                    <div><img src="/static/images/image-7.jpg" alt="" /></div>
+                                    <div><img src="/static/images/image-8.jpg" alt="" /></div>
+                                    <div><img src="/static/images/image-9.jpg" alt="" /></div>
+                                    <div><img src="/static/images/image-10.jpg" alt="" /></div>
+                                    <div><img src="/static/images/image-11.jpg" alt="" /></div>
+                                    <div><img src="/static/images/image-13.jpeg" alt="" /></div>
+                                </div>
+                                <div class="layer">
+                                    <div><img src="/static/images/image-14.png" alt="" /></div>
+                                    <div><img src="/static/images/image-15.png" alt="" /></div>
+                                </div>
+                                <div class="scaler">
+                                    <img src="/static/images/image-1.jpg" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            </div>
+            <section id="post-sequence-space" class="post-sequence-space" aria-label="Footer zone">
+                <div class="post-sequence-upper" aria-label="Upper 70 percent area">
+                    <svg class="social-svg-container" aria-hidden="true">
+                        <defs>
+                            <filter id="social-warp-1" color-interpolation-filters="sRGB" x="-20%" y="-20%" width="140%" height="140%">
+                                <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise1" seed="1" />
+                                <feOffset in="noise1" dx="0" dy="0" result="offsetNoise1">
+                                    <animate attributeName="dy" values="700;0" dur="6s" repeatCount="indefinite" calcMode="linear" />
+                                </feOffset>
+                                <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise2" seed="1" />
+                                <feOffset in="noise2" dx="0" dy="0" result="offsetNoise2">
+                                    <animate attributeName="dy" values="0;-700" dur="6s" repeatCount="indefinite" calcMode="linear" />
+                                </feOffset>
+                                <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise3" seed="2" />
+                                <feOffset in="noise3" dx="0" dy="0" result="offsetNoise3">
+                                    <animate attributeName="dx" values="490;0" dur="6s" repeatCount="indefinite" calcMode="linear" />
+                                </feOffset>
+                                <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise4" seed="2" />
+                                <feOffset in="noise4" dx="0" dy="0" result="offsetNoise4">
+                                    <animate attributeName="dx" values="0;-490" dur="6s" repeatCount="indefinite" calcMode="linear" />
+                                </feOffset>
+                                <feComposite in="offsetNoise1" in2="offsetNoise2" result="part1" />
+                                <feComposite in="offsetNoise3" in2="offsetNoise4" result="part2" />
+                                <feBlend in="part1" in2="part2" mode="color-dodge" result="combinedNoise" />
+                                <feDisplacementMap in="SourceGraphic" in2="combinedNoise" scale="30" xChannelSelector="R" yChannelSelector="B" />
+                            </filter>
+                            <filter id="social-warp-2" color-interpolation-filters="sRGB" x="-20%" y="-20%" width="140%" height="140%">
+                                <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="7" />
+                                <feColorMatrix type="hueRotate" result="pt1">
+                                    <animate attributeName="values" values="0;360;" dur=".6s" repeatCount="indefinite" calcMode="paced" />
+                                </feColorMatrix>
+                                <feComposite />
+                                <feTurbulence type="turbulence" baseFrequency="0.03" numOctaves="7" seed="5" />
+                                <feColorMatrix type="hueRotate" result="pt2">
+                                    <animate attributeName="values" values="0;333;199;286;64;168;256;157;360;" dur="5s" repeatCount="indefinite" calcMode="paced" />
+                                </feColorMatrix>
+                                <feBlend in="pt1" in2="pt2" mode="normal" result="combinedNoise" />
+                                <feDisplacementMap in="SourceGraphic" scale="30" xChannelSelector="R" yChannelSelector="B" />
+                            </filter>
+                            <filter id="social-warp-3" color-interpolation-filters="sRGB" x="-20%" y="-20%" width="140%" height="140%">
+                                <feTurbulence type="turbulence" baseFrequency="0.018" numOctaves="9" result="noiseA" seed="11" />
+                                <feOffset in="noiseA" dx="0" dy="0" result="offsetNoiseA">
+                                    <animate attributeName="dy" values="580;0" dur="5.4s" repeatCount="indefinite" calcMode="linear" />
+                                </feOffset>
+                                <feTurbulence type="turbulence" baseFrequency="0.023" numOctaves="8" result="noiseB" seed="13" />
+                                <feOffset in="noiseB" dx="0" dy="0" result="offsetNoiseB">
+                                    <animate attributeName="dx" values="0;-460" dur="5.4s" repeatCount="indefinite" calcMode="linear" />
+                                </feOffset>
+                                <feBlend in="offsetNoiseA" in2="offsetNoiseB" mode="screen" result="combinedNoise" />
+                                <feDisplacementMap in="SourceGraphic" in2="combinedNoise" scale="28" xChannelSelector="R" yChannelSelector="B" />
+                            </filter>
+                        </defs>
+                    </svg>
+                    <div class="qna-grid" aria-label="QnA preview cards">
+                        <article class="social-card-container qna-neon-card" data-variant="github" tabindex="0" aria-label="Q1 카드">
+                            <div class="social-inner-container">
+                                <div class="social-border-outer">
+                                    <div class="social-main-card"></div>
+                                </div>
+                                <div class="social-glow-layer-1"></div>
+                                <div class="social-glow-layer-2"></div>
+                            </div>
+                            <div class="social-overlay-1"></div>
+                            <div class="social-overlay-2"></div>
+                            <div class="social-background-glow"></div>
+                            <div class="social-content-container social-content-face social-content-face--front">
+                                <div class="social-content-top">
+                                    <div class="social-scrollbar-glass">QnA</div>
+                                    <p class="social-title">Q1</p>
+                                </div>
+                                <hr class="social-divider" />
+                                <div class="social-content-bottom">
+                                    <p class="social-description">지원 절차와 선발 기준은 어떻게 되나요?</p>
+                                </div>
+                            </div>
+                            <div class="social-content-container social-content-face social-content-face--back" aria-hidden="true">
+                                <div class="social-content-top">
+                                    <div class="social-scrollbar-glass">Answer</div>
+                                    <p class="social-title">A1</p>
+                                </div>
+                                <hr class="social-divider" />
+                                <div class="social-content-bottom">
+                                    <p class="social-description">입단 테스트 문제를 통하여 지원 후, 면접을 통하여 기술 수준보다 학습 의지와 꾸준함을 중심으로 선발합니다.</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="social-card-container qna-neon-card" data-variant="instagram" tabindex="0" aria-label="Q2 카드">
+                            <div class="social-inner-container">
+                                <div class="social-border-outer">
+                                    <div class="social-main-card"></div>
+                                </div>
+                                <div class="social-glow-layer-1"></div>
+                                <div class="social-glow-layer-2"></div>
+                            </div>
+                            <div class="social-overlay-1"></div>
+                            <div class="social-overlay-2"></div>
+                            <div class="social-background-glow"></div>
+                            <div class="social-content-container social-content-face social-content-face--front">
+                                <div class="social-content-top">
+                                    <div class="social-scrollbar-glass">QnA</div>
+                                    <p class="social-title">Q2</p>
+                                </div>
+                                <hr class="social-divider" />
+                                <div class="social-content-bottom">
+                                    <p class="social-description">정기 세미나와 스터디는 주 몇 회 진행되나요?</p>
+                                </div>
+                            </div>
+                            <div class="social-content-container social-content-face social-content-face--back" aria-hidden="true">
+                                <div class="social-content-top">
+                                    <div class="social-scrollbar-glass">Answer</div>
+                                    <p class="social-title">A2</p>
+                                </div>
+                                <hr class="social-divider" />
+                                <div class="social-content-bottom">
+                                    <p class="social-description">정기 세미나는 주 1회 기준으로 운영되고, 분야별 스터디는 팀 일정에 맞춰 주 1~2회 유동적으로 진행됩니다.</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="social-card-container qna-neon-card" data-variant="discord" tabindex="0" aria-label="Q3 카드">
+                            <div class="social-inner-container">
+                                <div class="social-border-outer">
+                                    <div class="social-main-card"></div>
+                                </div>
+                                <div class="social-glow-layer-1"></div>
+                                <div class="social-glow-layer-2"></div>
+                            </div>
+                            <div class="social-overlay-1"></div>
+                            <div class="social-overlay-2"></div>
+                            <div class="social-background-glow"></div>
+                            <div class="social-content-container social-content-face social-content-face--front">
+                                <div class="social-content-top">
+                                    <div class="social-scrollbar-glass">QnA</div>
+                                    <p class="social-title">Q3</p>
+                                </div>
+                                <hr class="social-divider" />
+                                <div class="social-content-bottom">
+                                    <p class="social-description">프로젝트는 팀 단위인가요, 개인 단위인가요?</p>
+                                </div>
+                            </div>
+                            <div class="social-content-container social-content-face social-content-face--back" aria-hidden="true">
+                                <div class="social-content-top">
+                                    <div class="social-scrollbar-glass">Answer</div>
+                                    <p class="social-title">A3</p>
+                                </div>
+                                <hr class="social-divider" />
+                                <div class="social-content-bottom">
+                                    <p class="social-description">팀을 구해서 프로젝트를 진행하여도 되고 블라블라블라~</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="social-card-container qna-neon-card" data-variant="apply" tabindex="0" aria-label="Q4 카드">
+                            <div class="social-inner-container">
+                                <div class="social-border-outer">
+                                    <div class="social-main-card"></div>
+                                </div>
+                                <div class="social-glow-layer-1"></div>
+                                <div class="social-glow-layer-2"></div>
+                            </div>
+                            <div class="social-overlay-1"></div>
+                            <div class="social-overlay-2"></div>
+                            <div class="social-background-glow"></div>
+                            <div class="social-content-container social-content-face social-content-face--front">
+                                <div class="social-content-top">
+                                    <div class="social-scrollbar-glass">QnA</div>
+                                    <p class="social-title">Q4</p>
+                                </div>
+                                <hr class="social-divider" />
+                                <div class="social-content-bottom">
+                                    <p class="social-description">초보자도 활동을 시작할 수 있을까요?</p>
+                                </div>
+                            </div>
+                            <div class="social-content-container social-content-face social-content-face--back" aria-hidden="true">
+                                <div class="social-content-top">
+                                    <div class="social-scrollbar-glass">Answer</div>
+                                    <p class="social-title">A4</p>
+                                </div>
+                                <hr class="social-divider" />
+                                <div class="social-content-bottom">
+                                    <p class="social-description">기초 트랙과 멘토링이 준비되어 있어 비전공자나 초보자도 단계별로 학습하며 충분히 활동할 수 있습니다.</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <footer class="site-footer" aria-label="Club footer information">
+                    <div class="site-footer__inner">
+                        <div class="site-footer__brand">
+                            <div class="site-footer__logo-frame">
+                                <img class="site-footer__logo" src="/static/images/그림1.png" alt="동아리 로고" />
+                            </div>
+                            <div class="site-footer__brand-copy">
+                                <h2 class="site-footer__club-name">MJSEC</h2>
+                                <p class="site-footer__address">주소: 경기도 용인시 처인구 명지로 116</p>
+                            </div>
+                        </div>
+                        <div class="site-footer__leaders">
+                            <article class="site-footer__leader">
+                                <h3>president</h3>
+                                <p>name: 이윤태</p>
+                                <p>num: 010-1234-5678</p>
+                                <p>email: yoont1016@gmail.com</p>
+                            </article>
+                            <article class="site-footer__leader">
+                                <h3>vice</h3>
+                                <p>name: 최윤호</p>
+                                <p>num: 010‑3023‑4192</p>
+                                <p>email: gdool88@gmail.com</p>
+                            </article>
+                        </div>
+                        <div class="site-footer__social" aria-label="Social media links">
+                            <div class="site-footer__social-item">
+                                <a class="site-footer__social-pill site-footer__social-pill--github" href="#" aria-label="GitHub">
+                                    <span class="site-footer__social-icon"><i class="fab fa-github"></i></span>
+                                    <span class="site-footer__social-text">GitHub</span>
+                                </a>
+                            </div>
+                            <div class="site-footer__social-item">
+                                <a class="site-footer__social-pill site-footer__social-pill--instagram" href="#" aria-label="Instagram">
+                                    <span class="site-footer__social-icon"><i class="fab fa-instagram"></i></span>
+                                    <span class="site-footer__social-text">Instagram</span>
+                                </a>
+                            </div>
+                            <div class="site-footer__social-item">
+                                <a class="site-footer__social-pill site-footer__social-pill--discord" href="#" aria-label="Discord">
+                                    <span class="site-footer__social-icon"><i class="fab fa-discord"></i></span>
+                                    <span class="site-footer__social-text">Discord</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="site-footer__copyright">Copyright © 2026 MJSEC. All rights reserved.</p>
+                </footer>
+            </section>
+            <div id="page-end"></div>
 
     </div>
+    <div id="qr-fab" class="qr-fab" aria-label="Quick link widget"></div>
 
 
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../static/script.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/qrcode-generator@1.4.4/qrcode.js"></script>
+    <script type="module" src="/static/qr-widget.js"></script>
   
     
 </body>
