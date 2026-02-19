@@ -1,0 +1,2 @@
+[k3s_nodes]
+136.114.132.128 ansible_user=gonas1218
