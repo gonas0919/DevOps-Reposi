@@ -111,14 +111,22 @@ jobs:
         with:
           sarif_file: trivy-image.sarif
 
+      - name: Trivy debug (table)
+        if: always()
+        run: |
+          trivy image --scanners vuln \
+            --vuln-type os,library \
+            --severity HIGH,CRITICAL \
+            --ignore-unfixed \
+            -f table "${IMG}" || true
+
       - name: Trivy JSON (for SeveritySource)
         if: always()
         run: |
           trivy image --scanners vuln \
-            --pkg-types os,library \
+            --vuln-type os,library \
             --severity HIGH,CRITICAL \
             --ignore-unfixed \
-            --detection-priority precise \
             -f json -o trivy-image.json "${IMG}" || true
 
       - name: Upload Trivy JSON
